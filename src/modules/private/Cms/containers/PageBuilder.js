@@ -9,7 +9,6 @@ import ViewPost from '../components/ViewPost'
 
 class PageBuilder extends Component {
   render() {
-    const { match } = this.props;
     return (
       <div className="content">
         <Switch>

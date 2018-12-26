@@ -43,6 +43,7 @@ export class CmsStore {
       onFetch: (res) => {
         Object.keys(this.PBUILDER_FRM.fields).map(key => {
           this.PBUILDER_FRM.fields[key].value = res.Page[key];
+          return null;
         })
       }
     });
@@ -150,4 +151,4 @@ export class CmsStore {
   };
 }
 
-export default new CmsStore;
+export default new CmsStore();

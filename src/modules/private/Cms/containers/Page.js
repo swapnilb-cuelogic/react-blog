@@ -13,7 +13,7 @@ class Page extends Component {
     this.props.cmsStore.getPageContent(nextProps.match);
   }
   render() {
-    const { pageContent, perror } = this.props.cmsStore;
+    const { pageContent } = this.props.cmsStore;
     if(pageContent === 'NO_MATCH') {
       return <NotFound />;
     }

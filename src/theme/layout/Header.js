@@ -10,6 +10,12 @@ const Header = props => (
           <Icon className="paw big icon" />Paw Cms
         </Menu.Item>
         <Menu.Menu position="right">
+            <Menu.Item
+                as={NavLink}
+                to={`/app/`}
+              >
+              <span>Admin Panel</span>
+            </Menu.Item>
           {
             props.navigation.map(item => (
               <Menu.Item

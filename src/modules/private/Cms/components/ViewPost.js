@@ -6,6 +6,7 @@ import { LoadingSpinner } from '../../../../theme/common/ImportCommon';
 import Helper from '../../../../helper/utility';
 import Aux from 'react-aux';
 import { FormInput } from '../../../../theme/form/FormElements';
+import _ from 'lodash';
 
 @inject('postStore')
 @withRouter
@@ -31,30 +32,37 @@ export default class ViewPost extends Component{
       const comments = currentPage.data.Post.comments
       return(
         <Aux>
-          <p>{currentPage.data.Post.title}</p>
+          <h2><i>{_.truncate(currentPage.data.Post.title, {'length': 80})}</i></h2>
           <Comment.Group >
             <Header as='h3' dividing>
               Comments
             </Header>
-          { comments.map(c => {
+
+          { comments.length === 0 ? (<div class="ui message"><p>No Comments Found.</p></div>) :
+            comments.map((c, index) => {
             return(
               <Comment key={c.id}>
-                <Comment.Content>
+                <Comment.Content>          
                   <Comment.Text>{c.description}</Comment.Text>
                 </Comment.Content>
               </Comment>
             )
+            
           })}
-          <Form reply onSubmit={this.postComment}>
-            <FormInput
-                key= 'description'
-                type="text"
-                name= 'description'
-                fielddata={CBUILDER_FRM.fields['description']}
-                changed={commentTxtChange}
-              />
-            <Button content='Add Reply' labelPosition='left' icon='edit' primary />
-          </Form>
+        
+            <Form reply onSubmit={this.postComment}>
+              <FormInput
+                  key= 'description'
+                  type="text"
+                  name= 'description'
+                  fielddata={CBUILDER_FRM.fields['description']}
+                  changed={commentTxtChange}
+                  placeHolder='sasasaksajksa'
+                />
+              <Button disabled={!CBUILDER_FRM.meta.isValid} content='Post Comment' labelPosition='left' icon='edit' primary />
+              <p className="field-error">{CBUILDER_FRM.meta.error}</p>
+            </Form>        
+            
           </Comment.Group>     
         </Aux>
       );

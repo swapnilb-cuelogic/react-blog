@@ -1,13 +1,12 @@
 
-
 type Post @model {
    id: ID! @isUnique
    title: String!
-   comments: [Comment!]! @relation(name: "PostComment")
+   comments: [Comment!]! @relation(name: "PostComment", onDelete: SET_NULL )
  }
 
 type Comment @model {
   id: ID! @isUnique
   description: String!
-  post: Post!  @relation(name: "PostComment")
+  post: Post! @relation(name: "PostComment", onDelete: SET_NULL)
 }

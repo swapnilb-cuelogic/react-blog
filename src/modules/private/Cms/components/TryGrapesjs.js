@@ -23,7 +23,7 @@ export default class AddUpdatePage extends Component {
   }
 
   componentDidMount() {
-    const editor = grapesjs.init({
+    grapesjs.init({
         container : '#gjs',
         components: '<div class="txt-red">Hello world!</div>',
         style: '.txt-red{color: red}',
@@ -52,8 +52,6 @@ export default class AddUpdatePage extends Component {
   render() {
     const { PBUILDER_FRM, currentPage, eleChange } = this.props.cmsStore;
     const action = this.props.match.params.id === 'new' ? 'new' : 'edit';
-
-    return <div id ='gjs' />;
 
     if (currentPage.loading) {
       return <LoadingSpinner />

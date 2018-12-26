@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import {
-  Container, Divider, Grid, Header, Segment,
+  Container, Segment,
 } from 'semantic-ui-react';
 
 const Footer = () => (

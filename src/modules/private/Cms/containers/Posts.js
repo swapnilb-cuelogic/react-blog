@@ -4,7 +4,7 @@ import { Table, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { NotFound } from '../../../../theme/common/ImportCommon';
 import { LoadingSpinner } from '../../../../theme/common/ImportCommon';
-
+import Aux from 'react-aux';
 
 @inject('postStore')
 
@@ -22,13 +22,11 @@ class Posts extends Component{
       return <LoadingSpinner/>
     }
     return (
-      <div>
+      <Aux>
+        <h2><i>Blog Posts</i></h2>
         <Table sortable celled fixed className="chamunda"> 
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell>
-              id
-            </Table.HeaderCell >
             <Table.HeaderCell>
               Title
             </Table.HeaderCell>
@@ -44,7 +42,6 @@ class Posts extends Component{
             allPosts.map(u => {
               return(
               <Table.Row key={u.id}>
-                <Table.Cell>{u.id}</Table.Cell>
                 <Table.Cell>{u.title}</Table.Cell>
                 <Table.Cell>
                   <Link to={`/app/posts/${u.id}`}>View</Link> | 
@@ -57,7 +54,7 @@ class Posts extends Component{
             )}
           </Table.Body>
         </Table>
-      </div>
+      </Aux>
     );   
   }
 }

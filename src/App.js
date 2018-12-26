@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
-import { Segment, Container, Grid } from 'semantic-ui-react';
 import Layout from './theme/layout/Layout';
 import Private from './modules/private/index';
 import Public from './modules/public/index';

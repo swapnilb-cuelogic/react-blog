@@ -42,6 +42,15 @@ export const deletePost = gql`
   mutation deletePost($id:  ID! ) {
     deletePost(id: $id) {
       id
+      title
+      comments{
+        id
+        description
+        post {
+          id
+          title
+        }
+      }
     }
   }
 `;

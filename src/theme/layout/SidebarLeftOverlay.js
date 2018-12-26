@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Aux from 'react-aux';
-import { Responsive, Sidebar, Menu, Button, Image, Icon } from 'semantic-ui-react';
-import { SidebarNav, GetNavItem } from './SidebarNav';
+import { Sidebar, Menu } from 'semantic-ui-react';
+import { SidebarNav } from './SidebarNav';
 
 class SidebarLeftPush extends Component {
   render() {

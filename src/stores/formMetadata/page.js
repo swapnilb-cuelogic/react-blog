@@ -21,6 +21,6 @@ export const POST_PAGE = {
 
 export const COMMENTS_FORM = {
   description: {
-    value: '', error: undefined, rule: 'required'
+    value: '', error: undefined, rule: 'required', placeHolder: "Enter new Comment"
   }
 }

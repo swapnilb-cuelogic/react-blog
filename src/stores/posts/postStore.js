@@ -36,6 +36,7 @@ export class PostStore {
       onFetch: (res) => {
         Object.keys(this.PBUILDER_FRM.fields).map(key => {
           this.PBUILDER_FRM.fields[key].value = res.Post[key];
+          return null;
         })
       }
     });
@@ -54,7 +55,10 @@ export class PostStore {
         .then((res) => {         
           resolve()
         })
-        .catch((res) => reject())
+        .catch((res) => { 
+          Helper.toast('Oops something wnt wrong.', 'error')
+          reject()
+        })
         .finally((data) => {           
           this.reset();
         });
@@ -68,13 +72,17 @@ export class PostStore {
     return  new Promise((resolve, reject) => {
       client
         .mutate({
-          mutation: id === 'new' ? createPost : updatePost,
-          variables: {...data, id}
+          mutation: id === undefined ? createPost : updatePost,
+          variables: {...data, id},
+          refetchQueries: [{ query: getAllPosts }]
         })
-        .then(() => {           
+        .then((res) => {           
           resolve()
         })
-        .catch(() => reject())
+        .catch((res) => { 
+          Helper.toast('Oops something wnt wrong.', 'error')
+          reject()
+        })
         .finally((data) => {
           this.reset();
         });
@@ -128,9 +136,11 @@ export class PostStore {
         refetchQueries: [{ query: getAllPosts }]
       })
       .then(() =>  Helper.toast('Post deleted successfully.', 'success') )
-      .catch(error => console.error(error.message));
-  };
-
+      .catch((res) => { 
+        Helper.toast('Oops something wnt wrong.', 'error')
+      })  
+  }
+  
   @action
   onFieldChange = (currentForm, field, value, type) => {
     const form = currentForm || 'formFinInfo';
@@ -145,8 +155,7 @@ export class PostStore {
     if (field) {
       this[form].fields[field].error = validation.errors.first(field);
     }
-  };
- 
+  }; 
 }
 
-export default new PostStore;
+export default new PostStore();
