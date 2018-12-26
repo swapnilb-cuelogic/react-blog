@@ -1,0 +1,27 @@
+.header-wrap .ui.menu .menu .item.active {
+  background-color: darkcyan!important;
+}
+
+.segment.content {
+  min-height: 680px !important;
+}
+
+.header.item {
+  color: darkcyan!important;
+  font-size: 1.3em!important;
+}
+
+.ql-editor {
+  height: 250px!important;
+}
+
+.private-logo {
+  text-align: center;
+  color: darkcyan;
+  font-size: 30px;
+  margin-bottom: 65px;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}

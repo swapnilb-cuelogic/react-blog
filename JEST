@@ -1,0 +1,39 @@
+MATCHERS
+ - toBe, not.toBe, toBeNull, toBeUndefined, toBeDefined, toBeTruthy, toBeFalsy
+ - toEqual, toBeGreaterThan, toBeGreaterThanOrEqual, toBeLessThan, toBeLessThanOrEqual, toBeCloseTo*
+ - STRING:: toMatch, not.toMatch
+ - ARRAYS:: toContain, 
+
+ASYNC
+ - expect.assertions(1);
+   await expect(fetchData()).resolves.toBe('peanut butter');
+
+ - expect.assertions(1);
+   await expect(fetchData()).rejects.toMatch('error');
+
+SETUP n TEARDOWN
+ - beforeEach, afterEach, beforeAll, afterAll, Scoping with describe block
+
+MOCK FUNCTIONS
+ - mock function: myMock = jest.fn() .. .mock prop
+ - mockReturnValueOnce, mockReturnValue[default]
+ - mock module: jest.mock('axios');
+ - mock names
+
+Jest Platform
+ - jest-changed-files
+ - jest-diff
+ - jest-docblock
+ - jest-get-type
+ - jest-validate
+ - jest-worker
+ - pretty-format
+
+CHEATSHEET
+ - https://github.com/sapegin/jest-cheat-sheet
+
+APOLLO REACT
+ - https://medium.com/@ferdingler/testing-apollo-react-components-a7618d8a9e7a
+ - https://medium.com/@adambisek/how-to-make-integration-tests-for-apollo-react-components-with-graphql-ef0bbd17e686
+ - https://www.npmjs.com/package/apollo-test-utils
+ - https://github.com/siteone/apollo-mocknetworkinterface

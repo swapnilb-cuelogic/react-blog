@@ -1,0 +1,140 @@
+.header-wrap {
+  height: 58px; }
+  .header-wrap .ui.menu {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.08); }
+    .header-wrap .ui.menu.large {
+      font-size: 1rem; }
+    .header-wrap .ui.menu .menu .item {
+      font-weight: 700;
+      color: #000000;
+      padding: 0.92857143em 2.285714285714286em; }
+      .header-wrap .ui.menu .menu .item.active {
+        color: #FFFFFF;
+        background-color: #9bcd32; }
+    .header-wrap .ui.menu .ui.dropdown .menu > .item {
+      font-weight: 700 !important;
+      padding: 0.78571429em 2.285714285714286em !important; }
+
+.content-wrapper {
+  min-height: calc(100vh - 58px); }
+
+.content {
+  min-height: calc(100vh - 342px); }
+
+.ui.segment.vertical.content {
+  padding: 50px 0; }
+
+.content-spacer {
+  padding: 3.21em 4.28em; }
+
+.webcontent-spacer {
+  padding: 2.428571em 5em 0 !important; }
+
+div.login-form {
+  height: 100%; }
+  div.login-form .column {
+    max-width: 450px; }
+  div.login-form h1.header {
+    margin-bottom: 1.5em; }
+  div.login-form ul.error-messages {
+    list-style-type: none;
+    padding: 0;
+    text-align: left; }
+
+.pushable > .sidebar ~ .pusher {
+  padding-left: 64px;
+  transition: all .5s ease;
+  height: calc(100vh - 58px);
+  overflow-y: auto; }
+  .pushable > .sidebar ~ .pusher .ui.vertical.segment.content {
+    padding: 0; }
+
+.ui.inverted.menu {
+  background: #383838; }
+
+.ui.sidebar.left.visible.thin ~ .fixed, .ui.sidebar.left.visible.thin ~ .pusher {
+  padding-left: 220px;
+  transform: translate3D(0, 0, 0); }
+
+.ui.sidebar.left.push {
+  width: 64px;
+  visibility: visible;
+  transform: translate3D(0, 0, 0);
+  transition: width .5s ease; }
+  .ui.sidebar.left.push .item {
+    min-width: auto !important;
+    text-align: left;
+    overflow: hidden;
+    padding: 1em 1.5em;
+    color: #a8a8a8; }
+    .ui.sidebar.left.push .item:first-child:before, .ui.sidebar.left.push .item:before {
+      display: none;
+      background: none; }
+    .ui.sidebar.left.push .item > .icon:not(.dropdown) {
+      float: left;
+      height: auto;
+      margin: 0 !important;
+      font-size: 1.14285714em !important;
+      line-height: 22px;
+      position: relative; }
+    .ui.sidebar.left.push .item span {
+      opacity: 0;
+      display: block;
+      line-height: 22px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden; }
+    .ui.sidebar.left.push .item.collapseIcon {
+      bottom: 0;
+      margin: 0; }
+      .ui.sidebar.left.push .item.collapseIcon:before {
+        display: none; }
+    .ui.sidebar.left.push .item.active {
+      background: transparent;
+      color: #94c430 !important; }
+      .ui.sidebar.left.push .item.active > i.icon:after {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 3px;
+        display: block;
+        background: #94c430;
+        position: absolute;
+        left: 50%;
+        margin-left: -2px;
+        bottom: -9px; }
+
+.ui.sidebar.visible.push {
+  width: 220px; }
+  .ui.sidebar.visible.push .item span {
+    opacity: 1;
+    margin-left: 35px;
+    max-width: 153px; }
+
+.page-header-section {
+  min-height: 132px;
+  background-color: #424242; }
+  .page-header-section h3 {
+    color: #FFFFFF;
+    font-size: 2.142857em;
+    font-weight: bold; }
+  .page-header-section .ui.grid .userDetailsLinks a {
+    color: #7D7D7D;
+    text-transform: uppercase;
+    margin-right: 29px;
+    font-size: 0.8em; }
+    .page-header-section .ui.grid .userDetailsLinks a:hover, .page-header-section .ui.grid .userDetailsLinks a.active {
+      color: #FFFFFF; }
+
+.ui.segment.inverted.footer,
+.ui.primary.segment.inverted.footer {
+  padding: 2em;
+  background-color: #383838; }
+
+.footer .ui.header {
+  font-weight: 400; }
+
+.ui.green.button, .ui.green.buttons .button {
+  background-color: #85b02b; }
+  .ui.green.button:hover, .ui.green.button:focus, .ui.green.button:active, .ui.green.buttons .button:hover, .ui.green.buttons .button:focus, .ui.green.buttons .button:active {
+    background-color: #79a027; }

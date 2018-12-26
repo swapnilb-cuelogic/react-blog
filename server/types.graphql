@@ -1,0 +1,13 @@
+
+
+type Post @model {
+   id: ID! @isUnique
+   title: String!
+   comments: [Comment!]! @relation(name: "PostComment")
+ }
+
+type Comment @model {
+  id: ID! @isUnique
+  description: String!
+  post: Post!  @relation(name: "PostComment")
+}
